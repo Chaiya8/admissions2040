@@ -101,7 +101,12 @@ export default function ResultsPage() {
             <div className="flex justify-between items-center pt-6">
               <span className="text-[10px] text-zinc-600 font-bold uppercase tracking-widest">{item.user}</span>
               <button className="text-[10px] text-orange-400 font-bold uppercase tracking-widest hover:text-orange-300">
-                View Full Profile &rarr;
+           <Link 
+  href="/results/student" 
+  className="text-[10px] text-orange-400 font-bold uppercase tracking-widest hover:text-orange-300 transition-colors"
+>
+  View Full Profile &rarr;
+</Link>
               </button>
             </div>
           </div>
