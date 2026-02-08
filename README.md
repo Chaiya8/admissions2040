@@ -1,97 +1,112 @@
-Admissions2040
 
-A centralized platform that makes college admissions information easier to access and understand—especially for first-generation and underrepresented students.
+# AdmitStack
 
-Admissions2040 brings together admissions requirements, costs, financial aid indicators, opportunities, and student-shared results that are usually scattered across dozens of websites.
+AdmitStack is a web platform designed to improve equity in college admissions by centralizing critical application information in one accessible place. The platform reduces information gaps that disproportionately impact underrepresented and first-generation students by making admissions data easier to find, compare, and understand.
 
-Built for the Code2040 Tech for Resistance Hackathon.
+Built for the **Code2040 Tech for Resistance Hackathon**.
 
-Problem
+---
 
-College admissions information is fragmented and hard to navigate. Students with access to private counselors and paid tools gain an advantage, while many Black, Hispanic, first-generation, and low-income students are left to search blindly for critical information like requirements, costs, and aid.
+## Motivation
 
-This information gap reinforces existing inequities in the admissions process.
+College admissions systems often advantage students with access to private counseling, paid tools, and institutional guidance. For many Black, Hispanic, first-generation, and low-income students, essential information—such as admissions requirements, application costs, financial aid indicators, and program opportunities is fragmented across multiple institutional sources.
 
-Solution
+This lack of transparency creates structural barriers to equitable college decision-making.
 
-Admissions2040 centralizes key admissions resources into one accessible platform. Instead of searching multiple sites, students can explore admissions data, opportunities, tips, and shared results in one place.
+---
 
-The MVP demonstrates how technology can reduce information barriers and support more equitable college decision-making.
+## What AdmitStack Does
 
-Key Features
+AdmitStack aggregates and organizes college admissions resources into a single, navigable platform. Students can explore schools, opportunities, and peer-shared outcomes without needing to search across dozens of websites.
 
-Opportunities – Scholarships, programs, and resources students may qualify for
+The platform is designed to support informed, confident decision-making throughout the college application process.
 
-Results – Students share admissions outcomes and experiences to increase transparency
+---
 
-Tips – Essay guidance and application advice
+## Core Features
 
-Insights – Admissions statistics and institutional data (curated/mock for MVP)
+* **Opportunities**
+  Centralized access to scholarships, programs, and application opportunities
 
-Community – Space for peer support and shared knowledge
+* **Results**
+  Student-shared admissions outcomes and experiences to increase transparency
 
-Tech Stack
+* **Tips**
+  Essay guidance and application strategies
 
-Next.js
+* **Insights**
+  Admissions statistics and institutional data presented in a standardized format
 
-TypeScript
+* **Community**
+  Peer support and shared knowledge for navigating the admissions process
 
-React
+---
 
+## Technical Overview
 
-MVP Scope & Feasibility
+* Framework: **Next.js**
+* Language: **TypeScript**
+* Frontend: **React**
+* Architecture: Modular, scalable component design
+* Focus: Accessibility, clarity, and usability
 
-Fully functional frontend demonstrating core user flows
+---
 
-Clean, navigable UI focused on accessibility and clarity
+## Getting Started
 
-Uses static data to simulate real admissions datasets
+### Prerequisites
 
-Designed to scale with a backend, real Common Data Set ingestion, and user accounts in future iterations
+* Node.js (v18 or later)
+* npm
 
-Getting Started (Run Locally)
-Prerequisites
+### Running the Project Locally
 
-Node.js (v18+ recommended)
-
-npm
-
-Installation & Run
-# Clone the repo
+```bash
 git clone https://github.com/your-username/admissions2040.git
-
-# Navigate to frontend
 cd admissions2040/frontend
-
-# Install dependencies
 npm install
-
-# Start development server
 npm run dev
+```
 
+The application will be available at:
 
-The app will run at:
-
+```
 http://localhost:3000
+```
 
-Notes
+---
 
-This is a frontend MVP built for a hackathon demo
+## Design Principles
 
-Data is manually curated or mocked
+* Clear and simple language
+* Minimal navigation steps
+* Reduced cognitive load
+* Designed with underrepresented students in mind
+* Emphasis on transparency and ease of access
 
-Some routes/pages may still be under development
 
-Future Work
+---
 
-Backend integration for live admissions and Common Data Set data
+## MVP Scope & Feasibility
 
-Personalized comparisons and eligibility matching
+* Fully functional frontend demonstrating core user flows
+* Clean, navigable UI focused on accessibility and clarity
+* Uses static data to simulate real admissions datasets
+* Designed to scale with a backend, real Common Data Set ingestion, and user accounts in future iterations
 
-Expanded institution coverage
+---
 
-Partnerships with student-support and college-access organizations
+## Impact
 
-Team
+Admissions2040 addresses systemic inequities in college admissions by lowering informational barriers and increasing transparency. By consolidating admissions data and peer insights, the platform supports more equitable access to higher education opportunities.
 
-Built by college students passionate about equity, access, and transparency in higher education.
+---
+
+## Future Directions
+
+* Backend integration for live admissions and Common Data Set data
+* Expand institutional coverage
+* Integrate personalized comparisons and eligibility insights
+* Strengthen community-driven features
+* Partner with college-access and student-support organizations
+
