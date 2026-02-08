@@ -6,7 +6,7 @@ export default function Home() {
 
       {/* NAV */}
       <nav className="flex items-center justify-between px-10 py-6 bg-zinc-900">
-        <div className="text-xl font-bold text-orange-400">Pathway</div>
+        <div className="text-xl font-bold text-orange-400">AdmitStack</div>
 
         <div className="hidden md:flex gap-6 text-sm">
           {/* Use Link instead of <a> for internal pages */}

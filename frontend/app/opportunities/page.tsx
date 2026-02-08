@@ -1,78 +1,108 @@
 import React from 'react';
+import Link from 'next/link';
 
-// This is just sample data for the MVP
 const OPPORTUNITIES = [
   {
     id: 1,
-    school: "Stanford University",
-    major: "Computer Science",
-    status: "Accepted",
-    date: "Mar 2026",
-    stats: { gpa: "3.95", test: "1520 SAT", aid: "Full Ride" },
-    user: "Maria G.",
-    color: "border-emerald-500/30 bg-emerald-500/5 text-emerald-400"
+    title: "QuestBridge National College Match",
+    provider: "QuestBridge",
+    description: "Full four-year scholarships to top colleges for outstanding low-income high school seniors.",
+    tags: ["Full Scholarship", "Low-Income", "Top Schools"],
+    category: "Scholarship",
+    badge: "Full Ride",
+    date: "Sep 26, 2026",
+    location: "Nationwide"
   },
   {
     id: 2,
-    school: "MIT",
-    major: "Mechanical Engineering",
-    status: "Waitlisted",
-    date: "Mar 2026",
-    stats: { gpa: "3.88", test: null, aid: null },
-    user: "Anonymous",
-    color: "border-amber-500/30 bg-amber-500/5 text-amber-400"
+    title: "LEDA Scholars Program",
+    provider: "LEDA",
+    description: "Intensive summer program preparing high-achieving, under-resourced students for top colleges.",
+    tags: ["Summer Program", "College Prep", "Mentorship"],
+    category: "Pipeline Program",
+    badge: "",
+    date: "Mar 15, 2026",
+    location: "Princeton, NJ"
   },
-  // Add more here...
+  {
+    id: 3,
+    title: "Gates Scholarship",
+    provider: "Gates Foundation",
+    description: "Covers full cost of attendance for exceptional minority students pursuing any major.",
+    tags: ["Full Ride", "STEM", "Minority Students"],
+    category: "Scholarship",
+    badge: "Full Cost of Attendance",
+    date: "Sep 15, 2026",
+    location: "Nationwide"
+  }
 ];
 
 export default function OpportunitiesPage() {
   return (
-    <main className="min-h-screen bg-[#121417] text-white p-8">
-      {/* Header Section */}
-      <div className="max-w-6xl mx-auto text-center mb-12">
-        <span className="bg-amber-500/10 text-amber-500 text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider">
-          🎓 Opportunities
+    <main className="min-h-screen bg-[#121417] text-white p-10 font-sans">
+      
+      {/* Header section matching Community style */}
+      <div className="text-center mb-16">
+        <span className="bg-amber-500/10 text-amber-500 text-xs font-bold px-3 py-1 rounded-full uppercase border border-amber-500/20">
+          Opportunities
         </span>
-        <h1 className="text-4xl md:text-5xl font-serif mt-4 mb-4">Admissions Outcomes</h1>
-        <p className="text-gray-400 max-w-2xl mx-auto">
-          See real decisions from community members. Share yours anonymously or publicly — every data point helps.
+        <h1 className="text-5xl font-serif mt-6 mb-4 italic">Admissions Opportunities</h1>
+        <p className="text-zinc-400 max-w-2xl mx-auto text-lg leading-relaxed">
+          Scholarships, pipeline programs, and summer experiences curated for underrepresented students.
         </p>
       </div>
 
-      {/* Grid Section */}
-      <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-        {OPPORTUNITIES.map((item) => (
+      {/* Grid matching Community style */}
+      <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-6 mb-16">
+        {OPPORTUNITIES.map((opp) => (
           <div 
-            key={item.id} 
-            className={`border rounded-xl p-5 flex flex-col justify-between transition-all hover:scale-[1.02] ${item.color}`}
+            key={opp.id} 
+            className="group block border border-zinc-800 bg-zinc-900/30 rounded-2xl p-8 transition-all duration-300 hover:bg-zinc-800/50 hover:border-amber-500/30 transform hover:-translate-y-1"
           >
-            <div>
-              <div className="flex justify-between items-center mb-4">
-                <span className="text-xs font-semibold px-2 py-0.5 rounded-full border border-current capitalize">
-                  {item.status}
+            <div className="flex justify-between items-start mb-6">
+              <span className="text-[10px] font-bold uppercase tracking-widest text-amber-500 bg-amber-500/10 px-2 py-1 rounded">
+                {opp.category}
+              </span>
+              {opp.badge && (
+                <span className="text-[10px] font-bold text-amber-600 uppercase">
+                  $ {opp.badge}
                 </span>
-                <span className="text-xs opacity-60">{item.date}</span>
-              </div>
-
-              <h3 className="text-lg font-bold text-white">{item.school}</h3>
-              <p className="text-sm opacity-80 mb-4">{item.major}</p>
-
-              <div className="space-y-1 text-sm">
-                <p className="text-white/60">GPA: <span className="text-white font-medium">{item.stats.gpa}</span></p>
-                {item.stats.test && (
-                  <p className="text-white/60">Test: <span className="text-white font-medium">{item.stats.test}</span></p>
-                )}
-                {item.stats.aid && (
-                  <p className="text-white/60">Aid: <span className="text-amber-400 font-medium">{item.stats.aid}</span></p>
-                )}
-              </div>
+              )}
             </div>
 
-            <div className="mt-6 pt-4 border-t border-white/10">
-              <p className="text-xs opacity-50 italic">{item.user}</p>
+            <h2 className="text-xl font-bold text-white group-hover:text-amber-500 transition-colors mb-2">
+              {opp.title}
+            </h2>
+            <p className="text-zinc-500 text-xs mb-4 uppercase tracking-tighter">{opp.provider}</p>
+            
+            <p className="text-zinc-400 text-sm mb-6 leading-relaxed">
+              {opp.description}
+            </p>
+
+            <div className="flex flex-wrap gap-2 mb-8">
+              {opp.tags.map((tag, i) => (
+                <span key={i} className="text-[9px] bg-zinc-800 text-zinc-400 px-2 py-1 rounded-md border border-white/5">
+                  {tag}
+                </span>
+              ))}
+            </div>
+
+            <div className="flex items-center justify-between mt-auto pt-6 border-t border-white/5 text-[10px] text-zinc-500 uppercase tracking-widest font-bold">
+              <span>{opp.date}</span>
+              <span>{opp.location}</span>
             </div>
           </div>
         ))}
+      </div>
+
+      {/* Persistent Back Button for all pages */}
+      <div className="flex justify-center pb-10">
+        <Link 
+          href="/" 
+          className="text-zinc-500 hover:text-white text-sm transition-colors uppercase tracking-widest font-bold flex items-center gap-2"
+        >
+          &larr; Back to Dashboard
+        </Link>
       </div>
     </main>
   );
